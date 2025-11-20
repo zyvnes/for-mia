@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 reasons why i love you</title>
+<style>
+    body {
+        background: linear-gradient(135deg, #fce4ec, #e3f2fd);
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        padding: 40px;
+        color: #c2185b;
+    }
+
+    h1 {
+        font-size: 2.3em;
+        margin-bottom: 10px;
+    }
+
+    #dice {
+        width: 120px;
+        height: 120px;
+        border-radius: 20px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3em;
+        margin: 30px auto;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    #dice:hover {
+        box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    }
+
+    #dice:active {
+        transform: scale(0.95);
+    }
+
+    button {
+        background: #f8bbd0;
+        border: none;
+        padding: 12px 25px;
+        font-size: 1.2em;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    button:hover {
+        background: #f48fb1;
+    }
+
+    #message {
+        margin-top: 25px;
+        font-size: 1.4em;
+        min-height: 2em;
+    }
+</style>
+</head>
+<body>
+
+<h1>roll the dice, beautiful</h1>
+<p>tap the dice or press the button for a cute message</p>
+
+<div id="dice">🎲</div>
+
+<button onclick="rollDice()">roll</button>
+
+<div id="message"></div>
+
+<script>
+    const messages = {
+        1: "you’re the best thing in my world",
+        2: "i hope your day is as lovely as you are",
+        3: "you make my heart happy",
+        4: "i’m so proud of you, always",
+        5: "you’re cuter than any dice roll",
+        6: "i adore you more than words",
+        7: "you deserve all the love today",
+        8: "you’re my favorite person ever",
+        9: "you’re magic, truly",
+        10: "i’m grateful for you every day",
+        11: "you’re my sunshine",
+        12: "you’re amazing and don’t forget it",
+        13: "you make everything better",
+        14: "your smile? my weakness",
+        15: "i believe in you, always",
+        16: "you’re a masterpiece",
+        17: "i’m lucky to have you",
+        18: "you’re my home, wherever you are",
+        19: "i love you endlessly",
+        20: "nat 20! you're the most wonderful human alive"
+    };
+
+    function rollDice() {
+        const roll = Math.floor(Math.random() * 20) + 1;
+        document.getElementById("dice").textContent = roll;
+        document.getElementById("message").textContent = messages[roll];
+    }
+
+    document.getElementById("dice").addEventListener("click", rollDice);
+</script>
+
+</body>
+</html>
